@@ -1,11 +1,3 @@
-<?php
-
-session_start();
-$foto = $_SESSION["Foto"];
-$ID = $_SESSION["ID_User"];
-$nombre = $_SESSION["Nom"];
-$ape = $_SESSION["Ape"];
-$section = $_GET['Ruta'] ?? 'home';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +8,10 @@ $section = $_GET['Ruta'] ?? 'home';?>
     
 </head>
 <body>
-    <h1>Bien venido 	<?php echo "$nombre $ape "; ?></h1>
+
+<form action="Logica/Salir.php" method="post">
+<button class="btn btn-danger" type="submit">Salir</button>
+</form>
+    
 </body>
 </html>
