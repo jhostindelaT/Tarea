@@ -56,7 +56,7 @@ $Linea = $DatosObtenidos["Linea"];
          </div>
 
 
-         <form action="../Programa.php" method="post">
+         <form action="../Programa.php?Ruta=Empleados-Lista" method="post">
             <button  class="btn btn-light shadow-lg p-3 mb-5 bg-body rounded" type="submit">Regresar</button>
          </form>
       </div>

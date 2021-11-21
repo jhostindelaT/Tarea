@@ -1,5 +1,12 @@
 function AbrirModal() {
-    $("#DetallesEmpleado").modal("show");
+    $("#ModalEditar").modal("show");
 
     
 }
+
+function Alerta() {
+    $("#alerta").Toast("show");
+
+    
+}
+

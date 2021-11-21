@@ -20,7 +20,7 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 
 </head>
 
@@ -33,7 +33,7 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
         <div class="row">
             <div class="col-md-12">
                 <h1 align="center">Lista de empleados</h1>
-              
+
                 <table width="70%" class="table table-hover" align="center">
                     <thead class="table-primary">
 
@@ -52,28 +52,28 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                    while ($datos = $ListaEmpleado->fetch_array()) {
-                    ?>
-                    
-                        <tr>
-                            <td><?php echo $datos["Users"] ?></td>
-                            <td><?php echo $datos["Nombres"] ?></td>
-                            <td><?php echo $datos["Apellidos"] ?></td>
-                            <td><?php echo $datos["Edad"] ?></td>
-                            <td>Esta Activo</td>
-                            <td><?php echo $datos["Linea"] ?></td>
+                        <?php
+                        while ($datos = $ListaEmpleado->fetch_array()) {
+                        ?>
 
-                            <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-danger">Eliminar</button></a></td>
-                            <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Actualizar</button></a></td>
-                            <td><a href="Seccion/Empleado-Detalles.php?id=<?php echo $datos["ID_Usuario"] ?>""><button class="btn btn-outline-primary">Detalles</button></a></td>
+                            <tr>
+                                <td><?php echo $datos["Users"] ?></td>
+                                <td><?php echo $datos["Nombres"] ?></td>
+                                <td><?php echo $datos["Apellidos"] ?></td>
+                                <td><?php echo $datos["Edad"] ?></td>
+                                <td>Esta Activo</td>
+                                <td><?php echo $datos["Linea"] ?></td>
 
-                        </tr>
-                    <?php
-                    }
+                                <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button onclick="Alerta();" class="btn btn-outline-danger">Eliminar</button></a></td>
+                                <td><a href="Seccion/Empleado-Editar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Actualizar</button></a></td>
+                                <td><a href="Seccion/Empleado-Detalles.php?id=<?php echo $datos["ID_Usuario"] ?>""><button class=" btn btn-outline-primary">Detalles</button></a></td>
 
-                    ?>
-                     </tbody>
+                            </tr>
+                        <?php
+                        }
+
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -81,7 +81,8 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
 
 
     </div>
-    
+  
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@ require_once 'URL/rutas.php';
 session_start();
 
 
-$UsuarioLine=$_SESSION["Entro"];
+$UsuarioLine = $_SESSION["Entro"];
 
 $foto = $_SESSION["Foto"];
 $ID = $_SESSION["ID_User"];
@@ -18,9 +18,7 @@ if (!isset($routes[$section])) {
 }
 
 if (isset($UsuarioLine)) {
-	
-}
-else{
+} else {
 	header("location: index.php");
 }
 ?>
@@ -35,52 +33,50 @@ else{
 </head>
 
 <body>
-	<div class="container">
-		<div class="Headerr">
-		</div>
-		<header class="">
 
-			<nav class="navbar navbar-expand-lg navbar-primary bg-light">
-				<div class="container-fluid">
+
+	<header class="">
+
+		<nav class="navbar navbar-expand-lg navbar-primary bg-light ">
+			<div class="container-fluid ">
+				
+				<div class="collapse navbar-collapse nav justify-content-center" id="navbarNav">
 				<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarNav">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="Programa.php?Ruta=Home">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Producto">Producto</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Inventario">Inventario</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Transacion">Transaccion</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Configuracion">Configuacion</a>
-							</li>
-						</ul>
-					</div>
+					<ul class="navbar-nav ">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="Programa.php?Ruta=Home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Programa.php?Ruta=Producto">Producto</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Programa.php?Ruta=Inventario">Inventario</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Programa.php?Ruta=Transacion">Transaccion</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Programa.php?Ruta=Configuracion">Configuacion</a>
+						</li>
+					</ul>
 				</div>
-			</nav>
-		</header>
-
+			</div>
+		</nav>
+	</header>
+	<div class="container">
 		<!--Contenido-->
 		<?php
 		require_once 'Seccion/' . $section . '.php';
 		?>
-		
+
 	</div>
 	<script src="jqueri/jquery.js"></script>
-	<script src="Modal.js"></script>
 	<script src="bootstrap5/js/bootstrap.min.js"></script>
+	<script src="Modal.js"></script>
+
 </body>
 
 </html>
