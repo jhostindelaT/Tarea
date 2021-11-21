@@ -1,6 +1,9 @@
 <?php
+$routes = [
+    'Lista',
+    'Solicitudes'
 
-
+];
 ?>
 
 
@@ -20,28 +23,22 @@
 
 
     <header>
-   <div style="margin-top: 4%;">
-    <div class="row">
+        <div style="margin-top: 4%;">
 
-        <div class="col-md-2">
-            <div id="list-example" class="list-group">
-                <a class="list-group-item list-group-item-action" href="Programa.php?Ruta=Empleados">Lista</a>
-                <a class="list-group-item list-group-item-action" href="Programa.php?Ruta=Empleados?SS=?Solicitudes">s</a>
-                <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-                <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-            </div>
-        </div>
-        <div class="col-md-10">
-            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-    
-             
-         <?php 
-         require_once 'Empleados/' . $seleccion . '.php';
-                ?>
-            </div>
-        </div>
-    </div>
-    </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="Programa.php?Ruta=Empleados-Lista">Lista De Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Programa.php?Ruta=Empleados-solicitud">Solicitudo DE Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
     </header>
 
     <script src="../jqueri/jquery.js"></script>

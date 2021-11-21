@@ -52,7 +52,7 @@ else{
 								<a class="nav-link" aria-current="page" href="Programa.php?Ruta=Home">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Empleados">Empleado</a>
+								<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="Programa.php?Ruta=Producto">Producto</a>
