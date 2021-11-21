@@ -30,14 +30,12 @@ $routes = [
                     <a class="nav-link " aria-current="page" href="Programa.php?Ruta=Empleados-Lista">Lista De Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Programa.php?Ruta=Empleados-solicitud">Solicitudo DE Emplead</a>
+                    <a class="nav-link" href="Programa.php?Ruta=Empleados-solicitud">Solicitud Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Otros</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                
             </ul>
     </header>
 
