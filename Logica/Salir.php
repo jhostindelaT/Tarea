@@ -7,8 +7,8 @@
 
     $Actualizar= "UPDATE Users SET Linea=0 WHERE Users.ID_Usuario=$ID";
     $MandarConsultaActualizar=mysqli_query($con, $Actualizar);
-    session_abort();
-  
+    $_SESSION["Entro"]=null;
+   
     header("location: ../index.php");
     exit();
 

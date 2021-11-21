@@ -3,17 +3,26 @@
 require_once 'URL/rutas.php';
 
 session_start();
+
+
+$UsuarioLine=$_SESSION["Entro"];
+
 $foto = $_SESSION["Foto"];
 $ID = $_SESSION["ID_User"];
 $nombre = $_SESSION["Nom"];
 $ape = $_SESSION["Ape"];
-$section = $_GET['Ruta'] ?? 'home';
+$section = $_GET['Ruta'] ?? 'Home';
 
 if (!isset($routes[$section])) {
 	$section = 404;
 }
 
-
+if (isset($UsuarioLine)) {
+	
+}
+else{
+	header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,7 +42,7 @@ if (!isset($routes[$section])) {
 
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
-				<img src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
+				<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -63,14 +72,13 @@ if (!isset($routes[$section])) {
 			</nav>
 		</header>
 
-
-
-
-
+		<!--Contenido-->
 		<?php
 		require_once 'Seccion/' . $section . '.php';
 		?>
+		
 	</div>
+	<script src="jqueri/jquery.js"></script>
 	<script src="build/js/bundle.min.js"></script>
 	<script src="bootstrap5/js/bootstrap.min.js"></script>
 </body>

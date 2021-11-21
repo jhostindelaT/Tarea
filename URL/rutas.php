@@ -18,6 +18,9 @@ $routes = [
 
    'Configuracion' => [
       'title' => '  Configuracion',
+   ],
+   'Lista' => [
+      'title' => 'ListaEmpleado',
    ]
  
 ];
