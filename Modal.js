@@ -1,5 +1,5 @@
 function AbrirModal() {
-    $("#Prueba").modal("show");
+    $("#DetallesEmpleado").modal("show");
 
     
 }

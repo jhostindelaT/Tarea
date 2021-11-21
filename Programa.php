@@ -40,7 +40,7 @@ else{
 		</div>
 		<header class="">
 
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<nav class="navbar navbar-expand-lg navbar-primary bg-light">
 				<div class="container-fluid">
 				<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,7 @@ else{
 		
 	</div>
 	<script src="jqueri/jquery.js"></script>
-	<script src="build/js/bundle.min.js"></script>
+	<script src="Modal.js"></script>
 	<script src="bootstrap5/js/bootstrap.min.js"></script>
 </body>
 

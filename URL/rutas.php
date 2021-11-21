@@ -30,6 +30,10 @@ $routes = [
  
    'Empleados-solicitud' => [
       'title' => 'EMPLEADOS',
+   ],
+
+   'Empleado-Detalles' => [
+      'title' => 'EMPLEADOS',
    ]
 
    
