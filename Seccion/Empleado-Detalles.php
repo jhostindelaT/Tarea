@@ -18,6 +18,8 @@ $Foto = $DatosObtenidos["FotoPerfil"];
 $Edad = $DatosObtenidos["Edad"];
 $Activo = $DatosObtenidos["Activo"];
 $Linea = $DatosObtenidos["Linea"];
+$Cedula = $DatosObtenidos["Cedula"];
+$NumeroCel = $DatosObtenidos["NumeroDeTelefono"];
 
 
 ?>
@@ -47,11 +49,11 @@ $Linea = $DatosObtenidos["Linea"];
             </p>
 
             <p>
-               El Usuartio que posee el es <?php echo $Usuario ?>.
+               El Usuartio que posee el es <?php echo $Usuario ?>, su numero de cedula es <?php echo $Cedula ?>.
             </p>
 
             <p>
-               (En esta seccion dependiendo del cliente se mostraran los datos que el solicita, por el ejempo, Numero de telefono, Cedula, Direccion, Etc,etc).
+              Para poder contactarlo su numero telefonico es <?php echo $NumeroCel ?>.
             </p>
          </div>
 

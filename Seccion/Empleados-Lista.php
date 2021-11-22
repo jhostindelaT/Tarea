@@ -44,6 +44,8 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                             <td scope="col">Edad</td>
                             <td scope="col">Activo</td>
                             <td scope="col">Linea</td>
+                            <td scope="col">Cedula</td>
+                            <td scope="col">NumeroDeTelefono</td>
                             <td scope="col">Eliminar</td>
                             <td scope="col">Actualizar</td>
                             <td scope="col">Detalles</td>
@@ -63,6 +65,8 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                                 <td><?php echo $datos["Edad"] ?></td>
                                 <td>Esta Activo</td>
                                 <td><?php echo $datos["Linea"] ?></td>
+                                <td><?php echo $datos["Cedula"] ?></td>
+                                <td><?php echo $datos["NumeroDeTelefono"] ?></td>
 
                                 <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button onclick="Alerta();" class="btn btn-outline-danger">Eliminar</button></a></td>
                                 <td><a href="Seccion/Empleado-Editar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Actualizar</button></a></td>

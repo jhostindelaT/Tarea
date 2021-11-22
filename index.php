@@ -107,13 +107,13 @@ if (!empty($UsuarioEntro)) {
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="text" name="Usuario" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Usuario" />
+              placeholder="Usuario" autocomplete="username" />
             <label class="form-label" for="form3Example3">Inserte su Usuario</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input type="password" name="Clave" id="form3Example4" class="form-control form-control-lg"
+            <input type="password" name="Clave" autocomplete="current-password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Clave" />
             <label class="form-label" for="form3Example4">Inserte su Cave</label>
           </div>
