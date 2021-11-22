@@ -12,7 +12,7 @@ $IDd = $_REQUEST['id'];
 
 
 if (empty($IDd)) {
-    #
+    header("location: ../Programa.php?Ruta=Empleados-Lista");
 } else {
     $ConsultaDetalles = "SELECT *  from Users where ID_Usuario=$IDd";
     $EnvioConsulta = mysqli_query($con, $ConsultaDetalles);
