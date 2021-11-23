@@ -3,6 +3,7 @@
 require_once 'URL/rutas.php';
 
 session_start();
+require "conexion.php";
 
 
 $UsuarioLine = $_SESSION["Entro"];
@@ -31,6 +32,13 @@ if (isset($UsuarioLine)) {
 	<title><?php echo $routes[$section]['title']; ?></title>
 	<link rel="stylesheet" href="styloCalculadora.css">
 	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Datatable/dataTables.bootstrap5.min.css">
+	<link rel="stylesheet" type="text/css" href="Datatable/datatables.min.css" />
+	<link rel="stylesheet" type="text/css" href="Datatable/datatables.css" />
+
+	<script src="jqueri/jquery.js"></script>
+	<script src="Datatable/jquery.dataTables.min.js"></script>
+
 </head>
 
 <body>
@@ -40,9 +48,9 @@ if (isset($UsuarioLine)) {
 
 		<nav class="navbar navbar-expand-lg navbar-primary bg-light ">
 			<div class="container-fluid ">
-				
+
 				<div class="collapse navbar-collapse nav justify-content-center" id="navbarNav">
-				<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
+					<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
 					<ul class="navbar-nav ">
 						<li class="nav-item">
 							<a class="nav-link" aria-current="page" href="Programa.php?Ruta=Home">Home</a>
@@ -74,7 +82,14 @@ if (isset($UsuarioLine)) {
 		?>
 
 	</div>
-	<script src="jqueri/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#ListaEmpleados').DataTable();
+		});
+	</script>
+
+	<script src="Datatable/datatables.js"></script>
+	<script src="Datatable/datatables.min.js"></script>
 	<script src="bootstrap5/js/bootstrap.min.js"></script>
 	<script src="Modal.js"></script>
 

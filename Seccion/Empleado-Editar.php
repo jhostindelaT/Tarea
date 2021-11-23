@@ -14,19 +14,19 @@ $IDd = $_REQUEST['id'];
 if (empty($IDd)) {
     header("location: ../Programa.php?Ruta=Empleados-Lista");
 } else {
-    $ConsultaDetalles = "SELECT *  from Users where ID_Usuario=$IDd";
-    $EnvioConsulta = mysqli_query($con, $ConsultaDetalles);
-    $DatosObtenidos = mysqli_fetch_array($EnvioConsulta);
+    $ConsultaEditar = "SELECT *  from Users where ID_Usuario=$IDd";
+    $EnvioConsultaEditar = mysqli_query($con, $ConsultaEditar);
+    $DatosObtenidosDeLaConsulta = mysqli_fetch_array($EnvioConsultaEditar);
 
-    $Nombres =  $DatosObtenidos["Nombres"];
-    $Apellido = $DatosObtenidos["Apellidos"];
-    $Usuario = $DatosObtenidos["Users"];
-    $Foto = $DatosObtenidos["FotoPerfil"];
-    $Edad = $DatosObtenidos["Edad"];
-    $Activo = $DatosObtenidos["Activo"];
-    $Linea = $DatosObtenidos["Linea"];
-    $NumeroCelular = $DatosObtenidos["NumeroDeTelefono"];
-    $Cedula = $DatosObtenidos["Cedula"];
+    $Nombres =  $DatosObtenidosDeLaConsulta["Nombres"];
+    $Apellido = $DatosObtenidosDeLaConsulta["Apellidos"];
+    $Usuario = $DatosObtenidosDeLaConsulta["Users"];
+    $Foto = $DatosObtenidosDeLaConsulta["FotoPerfil"];
+    $Edad = $DatosObtenidosDeLaConsulta["Edad"];
+    $Activo = $DatosObtenidosDeLaConsulta["Activo"];
+    $Linea = $DatosObtenidosDeLaConsulta["Linea"];
+    $NumeroCelular = $DatosObtenidosDeLaConsulta["NumeroDeTelefono"];
+    $Cedula = $DatosObtenidosDeLaConsulta["Cedula"];
 
 
 //UPDATE `Users` SET `Users` = 'Jhosti', `Nombres` = 'Jhostin Missa', `Apellidos` = 'Cruz tra', `Edad` = '1', `Activo` = b'1', `Linea` = b'0' WHERE `Users`.`ID_Usuario` = 2;
