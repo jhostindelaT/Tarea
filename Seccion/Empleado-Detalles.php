@@ -41,8 +41,10 @@ $NumeroCel = $DatosObtenidos["NumeroDeTelefono"];
       <div class="container">
 
          <div class="clearfix">
-
-            <img src="data:image/jpg;base64,<?php echo base64_encode($Foto) ?>" style="border: 1px;" class="col-md-6 float-md-end mb-3 ms-md-3 shadow-lg p-3 mb-5 bg-body rounded">
+         <div class="col-md-3 col-lg-5 col-xl-9">
+         <img src="data:image/jpg;base64,<?php echo base64_encode($Foto) ?>" style="border: 1px;" class="col-md-6 float-md-end mb-3 ms-md-3 shadow-lg p-3 mb-5 bg-body rounded">
+      </div>
+            
 
             <p>
                Empleado <?php echo "$Nombres $Apellido"; ?> tiene la edad de <?php echo $Edad; ?> años.

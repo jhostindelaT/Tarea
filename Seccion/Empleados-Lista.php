@@ -13,7 +13,7 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
             <div class="col-md-12">
                 <h1 align="center">Lista de empleados</h1>
 
-                <table width="70%" id="ListaEmpleados" class="table table-hover" align="center">
+                <table width="90%" id="ListaEmpleados" class="table table-hover" align="center">
                     <thead class="table-primary">
 
                         <tr align="center">
@@ -56,7 +56,7 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                         }
 
                         ?>
-                    <tfoot>
+                    <tfoot class="table table-hover" >
                         <tr>
                             <td scope="col">Usuario</td>
                             <td scope="col">Nombres</td>
