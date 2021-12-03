@@ -48,7 +48,7 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                                 <td><?php echo $datos["NumeroDeTelefono"] ?></td>
 
                                 <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button onclick="Alerta();" class="btn btn-outline-danger">Eliminar</button></a></td>
-                                <td><a href="Seccion/Empleado-Editar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Habilitar</button></a></td>
+                                <td><a href="Seccion/Empleado-Habilitar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Habilitar</button></a></td>
                                
 
                             </tr>
