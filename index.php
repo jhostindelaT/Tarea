@@ -66,8 +66,24 @@ if (!empty($UsuarioEntro)) {
       }
     } else {
 
+      $BuscarUsuario = "SELECT COUNT(*) as UsuarioExiste from Users where Users='$usuario'";
+      $EnviarConsulta = mysqli_query($con, $BuscarUsuario);
+      $SiExiste = mysqli_fetch_array($EnviarConsulta);
 
-      header("location: index.php");
+
+      if ($SiExiste['UsuarioExiste'] == 0) {
+        $UsuarioValidar = '<label class="text-danger">El usuario no existe</label><br>';
+        $contraValidar= '<label class="text-danger">El usuario no existe</label><br>';
+      }
+
+      $SelecionarPass = "SELECT pass  from Users where Users='$usuario'";
+      $EnviarConsultaPass = mysqli_query($con, $SelecionarPass);
+      $ContraObtenida = mysqli_fetch_array($EnviarConsultaPass);
+
+
+      if ($ContraObtenida != $pass ) {
+       $contraValidar= '<label class="text-danger">Su contraseña es incorrecta</label><br>';
+      }
     }
   }
 }
@@ -106,19 +122,21 @@ if (!empty($UsuarioEntro)) {
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="text" name="Usuario" id="form3Example3" class="form-control form-control-lg" placeholder="Usuario" autocomplete="username" />
+                <input type="text" name="Usuario" id="form3Example3" class="form-control form-control-lg" placeholder="Usuario" value="<?php echo $usuario ?>" autocomplete="Nombre de usuario" />
+                <?php echo $UsuarioValidar ?>
                 <label class="form-label" for="form3Example3">Inserte su Usuario</label>
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-3">
-                <input type="password" name="Clave" autocomplete="current-password" id="form3Example4" class="form-control form-control-lg" placeholder="Clave" />
-                <label class="form-label" for="form3Example4">Inserte su Cave</label>
+                <input type="password" name="Clave" autocomplete="current-password" id="form3Example4" class="form-control form-control-lg" value="<?php echo $clave ?>" placeholder="Contraseña" />
+                <?php echo $contraValidar ?>
+                <label class="form-label" for="form3Example4">Inserte su Contraseña</label>
               </div>
 
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enviar</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">Aun no tenes una cuenta? <a href="#!" class="link-danger">Register</a></p>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Aun no tenes una cuenta? <a href="Registrarse.php" class="link-danger">Register</a></p>
               </div>
 
             </form>

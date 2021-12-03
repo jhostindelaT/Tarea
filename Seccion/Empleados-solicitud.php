@@ -1,71 +1,81 @@
 <?php
 
-session_start();
+$ConsultaEMpleado = "SELECT * FROM `Users` WHERE ID_TipoUser=2 and Activo=0;";
 
-include 'conexion.php';
-
-$ConsultaDetalles = "SELECT *  from Users";
-$EnvioConsulta = mysqli_query($con, $ConsultaDetalles);
-
-
-$Nombres =  $DatosObtenidos["Nombres"];
-$Apellido = $DatosObtenidos["Apellidos"];
-$Usuario = $DatosObtenidos["Users"];
-$Foto = $DatosObtenidos["FotoPerfil"];
-$Edad = $DatosObtenidos["Edad"];
-$Activo = $DatosObtenidos["Activo"];
-$Linea = $DatosObtenidos["Linea"];
-$NumeroCelular = $DatosObtenidos["NumeroDeTelefono"];
-$Cedula = $DatosObtenidos["Cedula"];
-
+$ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
 
-<body>
     <?php require_once 'Empleados.php'; ?>
+    <div style="margin-top: 4%;">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 align="center">Lista de empleados</h1>
+
+                <table width="90%" id="ListaEmpleados" class="table table-hover" align="center">
+                    <thead class="table-primary">
+
+                        <tr align="center">
+                            <td scope="col">Usuario</td>
+                            <td scope="col">Nombres</td>
+                            <td scope="col">Apellidos</td>
+                            <td scope="col">Edad</td>
+                            <td scope="col">Activo</td>
+                            <td scope="col">Linea</td>
+                            <td scope="col">Cedula</td>
+                            <td scope="col">NumeroDeTelefono</td>
+                            <td scope="col">Eliminar</td>
+                            <td scope="col">Habilitar</td>
+                         
 
 
-    <form action="" method="post">
-        <select name="arrar" id="as" autofocus>
-            <?php
-            while ($DatosObtenidos = mysqli_fetch_array($EnvioConsulta)) {
-            ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($datos = $ListaEmpleado->fetch_array()) {
+                        ?>
+
+                            <tr>
+                                <td><?php echo $datos["Users"] ?></td>
+                                <td><?php echo $datos["Nombres"] ?></td>
+                                <td><?php echo $datos["Apellidos"] ?></td>
+                                <td><?php echo $datos["Edad"] ?></td>
+                                <td>No se Encuentra Activo</td>
+                                <td><?php echo $datos["Linea"] ?></td>
+                                <td><?php echo $datos["Cedula"] ?></td>
+                                <td><?php echo $datos["NumeroDeTelefono"] ?></td>
+
+                                <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button onclick="Alerta();" class="btn btn-outline-danger">Eliminar</button></a></td>
+                                <td><a href="Seccion/Empleado-Editar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Habilitar</button></a></td>
+                               
+
+                            </tr>
+                        <?php
+                        }
+
+                        ?>
+                    <tfoot class="table table-hover" >
+                        <tr>
+                            <td scope="col">Usuario</td>
+                            <td scope="col">Nombres</td>
+                            <td scope="col">Apellidos</td>
+                            <td scope="col">Edad</td>
+                            <td scope="col">Activo</td>
+                            <td scope="col">Linea</td>
+                            <td scope="col">Cedula</td>
+                            <td scope="col">NumeroDeTelefono</td>
+                            <td scope="col">Eliminar</td>
+                            <td scope="col">Habilitar</td>
+                           
+                        </tr>
+                    </tfoot>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
 
-                <option value="<?php echo $DatosObtenidos["ID_Usuario"] ?>"><?php echo $DatosObtenidos["Users"] ?></option>
-
-
-
-            <?php } ?>
-        </select>
-    </form>
-    <input type="text" id="si" value="">
-    <button onclick="ShowSelected()" ></button>
-    <select name="arrar" id="asa"  autofocus>
-        <option></option>
-    </select>
-
-
-    <script type="text/javascript">
-        function ShowSelected() {
-            /* Para obtener el valor */
-            var cod = document.getElementById("as").value;
-            document.getElementById('si').value = cod;
-
-
-        }
-        ShowSelected();
-    </script>
-
-</body>
-
-</html>
+    </div>
