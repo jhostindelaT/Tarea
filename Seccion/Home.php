@@ -7,6 +7,8 @@ $nombre = $_SESSION["Nom"];
 $ape = $_SESSION["Ape"];
 $section = $_GET['Ruta'] ?? 'home'; ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,7 @@ $section = $_GET['Ruta'] ?? 'home'; ?>
         <div class="col-md-6">
             <form name="calculator" class="formcalculadora">
                 <p>Haz algun calculo para ver el resultado.</p>
-                <input type="textfield" name="ans" value="">
+                <input type="textfield" name="ans" placeholder="insertar numeros"  value="">
                 <br>
                 <input type="button" class="btn btn-primary" value="1" onClick="document.calculator.ans.value+='1'">
                 <input type="button" class="btn btn-primary" value="2" onClick="document.calculator.ans.value+='2'">

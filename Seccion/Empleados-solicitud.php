@@ -11,7 +11,7 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
     <div style="margin-top: 4%;">
         <div class="row">
             <div class="col-md-12">
-                <h1 align="center">Lista de empleados</h1>
+                <h1 align="center">Solicitud de Empleados</h1>
 
                 <table width="90%" id="ListaEmpleados" class="table table-hover" align="center">
                     <thead class="table-primary">
@@ -25,7 +25,6 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                             <td scope="col">Linea</td>
                             <td scope="col">Cedula</td>
                             <td scope="col">NumeroDeTelefono</td>
-                            <td scope="col">Eliminar</td>
                             <td scope="col">Habilitar</td>
                          
 
@@ -47,7 +46,6 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                                 <td><?php echo $datos["Cedula"] ?></td>
                                 <td><?php echo $datos["NumeroDeTelefono"] ?></td>
 
-                                <td><a href="Eliminar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button onclick="Alerta();" class="btn btn-outline-danger">Eliminar</button></a></td>
                                 <td><a href="Seccion/Empleado-Habilitar.php?id=<?php echo $datos["ID_Usuario"] ?>"><button class="btn btn-outline-warning">Habilitar</button></a></td>
                                
 
@@ -66,7 +64,6 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
                             <td scope="col">Linea</td>
                             <td scope="col">Cedula</td>
                             <td scope="col">NumeroDeTelefono</td>
-                            <td scope="col">Eliminar</td>
                             <td scope="col">Habilitar</td>
                            
                         </tr>

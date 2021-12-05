@@ -6,7 +6,9 @@ function AbrirModal() {
 
 function Alerta() {
     $("#alerta").Toast("show");
-
+    $('.modal-body').load('hola', function () {
+        $('#myModal').modal({ show: true });
+    });
     
 }
 

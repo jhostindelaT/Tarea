@@ -98,8 +98,8 @@ $NumeroCel = $DatosObtenidos["NumeroDeTelefono"];
                             </div>
 
                             <div class="text-center text-lg-start mt-4 pt-2">
-                                <a href="../Programa.php?Ruta=Empleados-solicitud"><button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancelar</button></a>
-                                <a href="Acciones/habilitar.php?Habilitar=<?php echo $IDd ?>"><button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Habilitar</button></a>
+                                <a href="../Programa.php?Ruta=Empleados-Lista"><button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancelar</button></a>
+                                <a href="Acciones/Desabilitar.php?Eliminar=<?php echo $IDd ?>"><button type="submit" class="btn btn-danger btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Eliminar</button></a>
                             </div>
                         </div>
                     </div>

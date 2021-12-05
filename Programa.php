@@ -34,26 +34,31 @@ if (isset($UsuarioLine)) {
 	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Datatable/dataTables.bootstrap5.min.css">
 	<link rel="stylesheet" type="text/css" href="Datatable/datatables.min.css" />
+
 	<link rel="stylesheet" type="text/css" href="Datatable/datatables.css" />
 
 	<script src="jqueri/jquery.js"></script>
 	<script src="Datatable/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="Datatable/rowReorder.dataTables.min.css" />
+	<link rel="stylesheet" type="text/css" href="Datatable/responsive.dataTables.min.css" />
 
 </head>
 
 <body>
+<div class="container">
 
+	<header >
+		<nav class="navbar navbar-expand-lg navbar navbar-light "  style="background-color: #e3f2fd;">
+			<div class="container-fluid " >
+				<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
 
-	<header class="">
-
-		<nav class="navbar navbar-expand-lg navbar-primary bg-light ">
-			<div class="container-fluid ">
-
-				<div class="collapse navbar-collapse nav justify-content-center" id="navbarNav">
-					<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
-					<ul class="navbar-nav ">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav  justify-content-center ">
 						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="Programa.php?Ruta=Home">Home</a>
+							<a class="nav-link " aria-current="page" href="Programa.php?Ruta=Home">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
@@ -73,24 +78,39 @@ if (isset($UsuarioLine)) {
 					</ul>
 				</div>
 			</div>
-		</nav>
+
 	</header>
-	<div class="container">
+	
 		<!--Contenido-->
 		<?php
 		require_once 'Seccion/' . $section . '.php';
 		?>
 
 	</div>
+
+
+
+
+
+
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#ListaEmpleados').DataTable();
+			var table = $('#ListaEmpleados').DataTable({
+				rowReorder: {
+					selector: 'td:nth-child(2)'
+				},
+				responsive: true
+			});
 		});
 	</script>
 
-	<script src="Datatable/datatables.js"></script>
+
+
 	<script src="Datatable/datatables.min.js"></script>
+	<script src="Datatable/dataTables.rowReorder.min.js"></script>
+	<script src="Datatable/dataTables.responsive.min.js"></script>
 	<script src="bootstrap5/js/bootstrap.min.js"></script>
+
 	<script src="Modal.js"></script>
 
 </body>
