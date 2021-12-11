@@ -12,7 +12,7 @@ if (!empty($_POST['AgregarCategoria'])) {
 }
 
 
-exit();
+
 $ConsultaCategoria = "SELECT  ID_Categria,Categoria,Nombres as Nombre, Apellidos AS Apellido FROM Categoria INNER JOIN Users ON Categoria.ID_Usuario=Users.ID_Usuario";
 $MandarConsulta = mysqli_query($con, $ConsultaCategoria);
 
