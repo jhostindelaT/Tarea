@@ -2,20 +2,19 @@
 
 session_start();
 include '../conexion.php';
-$agrego;
+header("location: Seccion/Producto.php ");
 
-if (empty($_REQUEST)) {
-	$mostrarmodal;
-}
 if (!empty($_POST['AgregarCategoria'])) {
+	
+}else {
+	header("location: si.php");
 
-	$Categoria = $_POST['AgregarCategoria'];
-	$idUsuario = $_SESSION["ID_User"];
-
-	$consultaInsert = "INSERT INTO Categoria( Categoria, ID_Usuario) VALUES ('$Categoria',$idUsuario)";
-	$levarlaConsulra = mysqli_query($con, $consultaInsert);
-	$Resultado = mysqli_fetch_array($levarlaConsulra);
 }
+
+
+exit();
+$ConsultaCategoria = "SELECT  ID_Categria,Categoria,Nombres as Nombre, Apellidos AS Apellido FROM Categoria INNER JOIN Users ON Categoria.ID_Usuario=Users.ID_Usuario";
+$MandarConsulta = mysqli_query($con, $ConsultaCategoria);
 
 
 ?>
@@ -25,16 +24,6 @@ if (!empty($_POST['AgregarCategoria'])) {
 <?php require_once 'Producto.php'; ?>
 
 <div class="Contenedorindex" class="CuerpoIndexProducto" style="margin-top: 2%;">
-
-
-	<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" style="margin-bottom: 22px;">
-		<div class="d-flex">
-			<div class="toast-body">
-				<p class="text">Recuerda que para agregar un producto antes tienes que agregar su categoria</p>
-			</div>
-			<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-		</div>
-	</div>
 
 	<div class="botones">
 		<button type="button" id="Categoria" class="btn btn-primary">Agregar Categoria</button>
@@ -66,7 +55,7 @@ if (!empty($_POST['AgregarCategoria'])) {
 				</div>
 				<div class="modal-body">
 
-					<form action="" method="post">
+					<form method="POST">
 
 						<input type="text" name="AgregarCategoria" autocomplete="off" id="Usuario" class="form-control form-control-lg" placeholder="Categoria" />
 						<label class="form-label" for="AgregarCategoria">Ingrese la nueva categoria</label>
@@ -94,7 +83,6 @@ if (!empty($_POST['AgregarCategoria'])) {
 				</div>
 				<div class="modal-footer">
 					<a href="Seccion/Acciones/EditarCategoriasProducto.php"><button type="submit" class="btn btn-primary">EditarCategorias</button></a>
-
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
 				</div>
@@ -115,11 +103,44 @@ if (!empty($_POST['AgregarCategoria'])) {
 					<form action="" method="post">
 
 						<div class="row">
+
 							<div class="col-md-6">
 
-								<input type="text" name="AgregarCategoria" autocomplete="off" id="Usuario" class="form-control form-control-lg" placeholder="Categoria" />
-								<label class="form-label" for="AgregarCategoria">Ingrese la nueva categoria</label>
+								<input type="text" name="NombreProducto" autocomplete="off" id="Producto" class="form-control form-control-lg" placeholder="Nombre Producto..." />
+								<label class="form-label" for="NombreProducto">Ingrese el nombre del producto</label>
 
+								<input type="text" name="CodigoDelProducto" autocomplete="off" id="CodigoP" class="form-control form-control-lg" placeholder="Codigo Del Producto..." />
+								<label class="form-label" for="CodigoDelProducto">Ingrese el codigo del producto</label>
+
+								<input type="text" name="CantidadDelProducto" autocomplete="off" id="Cantidad" class="form-control form-control-lg" placeholder="Cantidad Del Producto..." />
+								<label class="form-label" for="CantidadDelProducto">Ingrese la cantidad del producto</label>
+
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="fecha" autocomplete="off" id="Usuario" class="form-control form-control-lg" placeholder="Categoria" />
+								<label class="form-label" for="fecha">Ingrese la Fecha de expiracion</label>
+
+								<input type="text" name="PCompra" autocomplete="off" id="Usuario" class="form-control form-control-lg" placeholder="Categoria" />
+								<label class="form-label" for="PCompra">Ingrese el precio compra</label>
+
+								<input type="text" name="PVenta" autocomplete="off" id="Usuario" class="form-control form-control-lg" placeholder="Categoria" />
+								<label class="form-label" for="PVenta">Ingrese el precio venta </label>
+
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<select class="form-control form-control-lg" name="CategoriaSelect">
+										<?php
+										while ($datos = $MandarConsulta->fetch_array()) {
+										?>
+											<option value="<?php echo $datos["ID_Categria"] ?>"><?php echo $datos["Categoria"] ?></option>
+
+										<?php
+										}
+
+										?>
+									</select>
+								</div>
 							</div>
 						</div>
 
@@ -137,7 +158,7 @@ if (!empty($_POST['AgregarCategoria'])) {
 <button id="mostart" style="display: none;">click me</button>
 
 
-<?php echo $Mensaje; ?>
+
 
 
 
@@ -150,19 +171,11 @@ if (!empty($_POST['AgregarCategoria'])) {
 
 	$(document).ready(function() {
 		$('#Lista').addClass('active');
-		$('.toast').toast();
-		$('#mostart').click();
+	
 
 	});
 
-	$(document).on("click", "#mostart", function(e) {
 
-		$('.toast').toast('show');
-		$('.toast').toast({
-			delay: 3000
-		});
-
-	});
 
 	$(document).on("click", "#Categoria", function(e) {
 
