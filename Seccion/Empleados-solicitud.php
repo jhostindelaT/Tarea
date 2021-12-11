@@ -76,3 +76,11 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
 
 
     </div>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#Lista-solicitud').addClass('active');
+	});
+</script>

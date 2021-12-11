@@ -95,3 +95,10 @@ $ListaEmpleado = mysqli_query($con, $ConsultaEMpleado);
   </div>
 </div>
 </div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#Lista-Empleado').addClass('active');
+	});
+</script>

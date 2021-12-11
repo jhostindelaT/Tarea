@@ -34,7 +34,7 @@ if (isset($UsuarioLine)) {
 	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Datatable/dataTables.bootstrap5.min.css">
 	<link rel="stylesheet" type="text/css" href="Datatable/datatables.min.css" />
-
+	<link rel="stylesheet" type="text/css" href="stilosPrincipales.css" />
 	<link rel="stylesheet" type="text/css" href="Datatable/datatables.css" />
 
 	<script src="jqueri/jquery.js"></script>
@@ -42,45 +42,48 @@ if (isset($UsuarioLine)) {
 	<link rel="stylesheet" type="text/css" href="Datatable/rowReorder.dataTables.min.css" />
 	<link rel="stylesheet" type="text/css" href="Datatable/responsive.dataTables.min.css" />
 
+
 </head>
 
 <body>
-<div class="container">
+	<div class="container">
 
-	<header >
-		<nav class="navbar navbar-expand-lg navbar navbar-light "  style="background-color: #e3f2fd;">
-			<div class="container-fluid " >
-				<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar navbar-light " style="background-color: #e3f2fd;">
+				<div class="container-fluid ">
+					<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav  justify-content-center ">
-						<li class="nav-item">
-							<a class="nav-link " aria-current="page" href="Programa.php?Ruta=Home">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Programa.php?Ruta=Producto">Producto</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Programa.php?Ruta=Inventario">Inventario</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Programa.php?Ruta=Transacion">Transaccion</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Programa.php?Ruta=Configuracion">Configuacion</a>
-						</li>
-					</ul>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav  justify-content-center ">
+							<li class="nav-item">
+								<a class="nav-link " aria-current="page" href="Programa.php?Ruta=Home">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Programa.php?Ruta=Producto-Index">Producto</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Programa.php?Ruta=Inventario">Inventario</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Programa.php?Ruta=Transacion">Transaccion</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Programa.php?Ruta=Configuracion">Configuacion</a>
+							</li>
+							
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
 
-	</header>
-	
+		</header>
+
 		<!--Contenido-->
 		<?php
 		require_once 'Seccion/' . $section . '.php';
@@ -102,6 +105,9 @@ if (isset($UsuarioLine)) {
 				responsive: true
 			});
 		});
+
+
+
 	</script>
 
 
