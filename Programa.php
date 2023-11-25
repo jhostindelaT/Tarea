@@ -49,7 +49,7 @@ if (isset($UsuarioLine)) {
 	<div class="container">
 
 		<header>
-			<nav class="navbar navbar-expand-lg navbar navbar-light " style="background-color: #e3f2fd;">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-primary">
 				<div class="container-fluid ">
 					<img style="border-radius: 12em;" src="data:image/jpg;base64,<?php echo base64_encode($foto) ?>" width="70px;" height="70px;">
 
@@ -62,23 +62,16 @@ if (isset($UsuarioLine)) {
 								<a class="nav-link " aria-current="page" href="Programa.php?Ruta=Home">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Empleados-Lista">Empleado</a>
+								<a class="nav-link" href="Programa.php?Ruta=Producto-Lista">Producto</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Producto-Index">Producto</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Inventario">Inventario</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Programa.php?Ruta=Transacion">Transaccion</a>
-							</li>
+						
 							<li class="nav-item">
 								<a class="nav-link" href="Programa.php?Ruta=Configuracion">Configuacion</a>
 							</li>
 							
 							</li>
 						</ul>
+						<img  src="src/img/uma.png" width="120px;" height="70px;">
 					</div>
 				</div>
 
@@ -98,7 +91,7 @@ if (isset($UsuarioLine)) {
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			var table = $('#ListaEmpleados').DataTable({
+			var table = $('#ListaProducto').DataTable({
 				rowReorder: {
 					selector: 'td:nth-child(2)'
 				},

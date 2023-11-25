@@ -3,8 +3,8 @@ $routes = [
    'Home' => [
       'title' => 'HOME',
    ],
-   'Empleados' => [
-      'title' => 'EMPLEADOS',
+   'Producto' => [
+      'title' => 'Producto',
    ],
    'Producto-Index' => [
       'title' => 'PRODUCTO',
@@ -26,16 +26,16 @@ $routes = [
       'title' => 'ListaEmpleado',
    ],
 
-   'Empleados-Lista' => [
-      'title' => 'EMPLEADOS',
+   'Producto-Lista' => [
+      'title' => 'Producto',
    ],
 
-   'Empleados-solicitud' => [
-      'title' => 'EMPLEADOS',
+   'Carrito' => [
+      'title' => 'Carrito',
    ],
 
-   'Empleado-Detalles' => [
-      'title' => 'EMPLEADOS',
+   'Producto-Detalles' => [
+      'title' => 'Producto',
    ],
 
    'Empleado-Editar' => [

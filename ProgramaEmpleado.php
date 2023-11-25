@@ -21,11 +21,12 @@ if (!isset($routes[ $section ])) {
 	<body>
 	
      <?php 
-	 $foto=$_SESSION["FotoPerfil"];
-$ID=$_SESSION["ID_User"];
-$nombre=$_SESSION["Nom"];
-$ape=$_SESSION["Ape"];
-echo "$ID , $nombre , $ape"  ; ?>
+	 	$foto=$_SESSION["FotoPerfil"];
+		$ID=$_SESSION["ID_User"];
+		$nombre=$_SESSION["Nom"];
+		$ape=$_SESSION["Ape"];
+		echo "$ID , $nombre , $ape"  ;
+	?>
       
 		<header class="">
 			<div class="">

@@ -99,7 +99,7 @@ if (!empty($_POST)) {
     }
     if ($usuarioNoexiste == true && $nombrecompleto == true && $FotoDeperfilCompleto == true && $PirimeraContraCompleta == true && $SegundaContraCompleta == true && $DosNombresCompleto == true && $ApellidosCompletos == true && $CedulaCompleta == true && $NumeroCompleto == true && $EdadCompleta == true && $EdadCompleta == true) {
 
-        $consultaInsert = "INSERT INTO `Users`( `ID_TipoUser`, `Users`, `pass`, `Nombres`, `Apellidos`, `Edad`, `FotoPerfil`, `Activo`, `Linea`, `Cedula`, `NumeroDeTelefono`) VALUES (2,'$NombreUsuario','$PrimerContrasena','$DosNombres','$Apellidos',$EdadInsertar,'$FotoDePerfil',0,0,'$Cedula','$NumeroTelefono')";
+        $consultaInsert = "INSERT INTO `Users`( `ID_TipoUser`, `Users`, `pass`, `Nombres`, `Apellidos`, `Edad`, `FotoPerfil`, `Activo`, `Linea`, `Cedula`, `NumeroDeTelefono`) VALUES (2,'$NombreUsuario','$PrimerContrasena','$DosNombres','$Apellidos',$EdadInsertar,'$FotoDePerfil',1,0,'$Cedula','$NumeroTelefono')";
         $EnviarConsultainsert = mysqli_query($con, $consultaInsert);
 
 

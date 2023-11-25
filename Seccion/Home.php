@@ -23,35 +23,27 @@ $section = $_GET['Ruta'] ?? 'home'; ?>
 <body>
    <center> <h1>Bienvenido <?php echo "$nombre $ape "; ?></h1></center>
 
-    <div class="row">
-        <div class="col-md-6">
-            <form name="calculator" class="formcalculadora">
-                <p>Haz algun calculo para ver el resultado.</p>
-                <input type="textfield" name="ans" placeholder="insertar numeros"  value="">
-                <br>
-                <input type="button" class="btn btn-primary" value="1" onClick="document.calculator.ans.value+='1'">
-                <input type="button" class="btn btn-primary" value="2" onClick="document.calculator.ans.value+='2'">
-                <input type="button" class="btn btn-primary" value="3" onClick="document.calculator.ans.value+='3'">
-                <input type="button" class="btn btn-primary" value="+" onClick="document.calculator.ans.value+='+'">
-                <br>
-                <input type="button" class="btn btn-primary" value="4" onClick="document.calculator.ans.value+='4'">
-                <input type="button" class="btn btn-primary" value="5" onClick="document.calculator.ans.value+='5'">
-                <input type="button" class="btn btn-primary" value="6" onClick="document.calculator.ans.value+='6'">
-                <input type="button" class="btn btn-primary" value="-" onClick="document.calculator.ans.value+='-'">
-                <br>
-                <input type="button" class="btn btn-primary" value="7" onClick="document.calculator.ans.value+='7'">
-                <input type="button" class="btn btn-primary" value="8" onClick="document.calculator.ans.value+='8'">
-                <input type="button" class="btn btn-primary" value="9" onClick="document.calculator.ans.value+='9'">
-                <input type="button" class="btn btn-primary" value="*" onClick="document.calculator.ans.value+='*'">
-                <br>
-                <input type="button" class="btn btn-primary" value="0" onClick="document.calculator.ans.value+='0'">
-                <input type="reset"  class="btn btn-primary" value="c">
-                <input type="button" class="btn btn-primary" value="/" onClick="document.calculator.ans.value+='/'">
-                <input type="button" class="btn btn-primary" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
-            </form>
-        </div>
+   
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="src/img/Compu.jpg" class="d-block w-100" alt="...">
     </div>
-    
+    <div class="carousel-item">
+      <img src="src/img/Moto.jpg" class="d-block w-100" alt="...">
+    </div>
+   
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        
 
 </body>
 
